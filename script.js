@@ -15,8 +15,14 @@ class ChartClikable extends Chart {
     }
 }
 
+class ChartClikableSecond extends ChartClikable {
+    handleClick() {
+        alert("You cliked on Clikable Second Chart")
+    }
+}
+
 const chartContent = new Chart("300px", "red", true);
-const chartContent2 = new Chart("200px", "green", true);
+const chartContent2 = new ChartClikableSecond("200px", "green", true);
 const chartContent3 = new ChartClikable("259px", "blue", false);
 
 
