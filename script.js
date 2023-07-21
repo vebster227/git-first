@@ -9,9 +9,12 @@ class Chart {
 
 
 class ChartClikable extends Chart {
-    isClikable = true;
+    #isClikable = true;
     handleClick() {
         alert("You cliked on thr Clikable Chart");
+    }
+    getIsClikable() {
+        return this.#isClikable;
     }
 }
 
@@ -21,7 +24,7 @@ class ChartClikableSecond extends ChartClikable {
     }
 }
 
-const chartContent = new Chart("300px", "red", true);
+const chartContent = new ChartClikable("300px", "red", true);
 const chartContent2 = new ChartClikableSecond("200px", "green", true);
 const chartContent3 = new ChartClikable("259px", "blue", false);
 
@@ -38,7 +41,7 @@ function renderChart(charData) {
         chart.style.border = "2px solid black";
     }
     chartsContainer.appendChild(chart);
-    if (charData.isClikable) {
+    if (charData.getIsClikable()) {
         chart.addEventListener("click", charData.handleClick)
     }
 }
