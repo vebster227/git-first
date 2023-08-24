@@ -49,3 +49,26 @@ function renderChart(charData) {
 renderChart(chartContent);
 renderChart(chartContent2);
 renderChart(chartContent3);
+
+// factory / constructor
+function createUsers(name, age, sex) {
+    return {
+        name,
+        age,
+        sex
+    };
+}
+
+const user1 = createUsers("Nikolas", "18", "male");
+
+console.log(user1);
+// constructer
+function CreateUsers(name, age, sex) {
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+}
+
+const user12 = new CreateUsers("Nikolas", "18", "male");
+
+console.log(user12);
